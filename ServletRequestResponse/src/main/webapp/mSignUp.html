@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입 페이지</title>
+</head>
+<body>
+
+	<form action="mSignUp" method="POST">
+		Name : <input type="text" name="m_name"><br>
+		Password : <input type="password" name="m_pass"><br>
+		Gender : Male<input type="radio" name="m_gender" value="male">
+				 Female<input type="radio" name="m_gender" value="female"><br>
+		Hobby : <input type="checkbox" name="m_hobby" value="sport">Sport
+				<input type="checkbox" name="m_hobby" value="cooking">Cooking
+				<input type="checkbox" name="m_hobby" value="reading">Reading
+				<input type="checkbox" name="m_hobby" value="travel">Travel<br>
+		Residence : <select name="m_residence">
+						<option value="seoul">Seoul</option>
+						<option value="geonggi">Geonggi</option>
+						<option value="chungcheong">Chungcheong</option>
+						<option value="jeonra">Jeonra</option>
+						<option value="jeju">Jeju</option>
+						<option value="gyeongsang">Gyeongsang</option>
+						<option value="gangwon">Gangwon</option>
+					</select><br>
+		<input type="submit" value="SIGN UP">
+	</form>
+
+</body>
+</html>
