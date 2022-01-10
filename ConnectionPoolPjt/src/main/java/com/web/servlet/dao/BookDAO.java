@@ -89,6 +89,14 @@ public class BookDAO {
 			// 데이터베이스와 연결 및 sql문 실행
 			conn = dataSource.getConnection();
 			String sql = "insert into book values(book_seq.nextval, ?, ?)";
+			String sql = "insert into book values(book_seq.nextval, ?, ?)";	// 첫번째 오류 : ORA-00917: missing comma
+																			// 콤마가 없다해서 당황했지만 ()에서 오른쪽 괄호를 안 닫아주었음.
+																			// 그런데도 콤마가 없다했는데 다시 보니 "book_name = ?, book_loc = ?"라고 씀.
+																			// 사소한거도 다시 보자.
+			
+																			// 두번째 오류 : ORA-02289: sequence does not exist 오류 났었음.
+																			// 이유는 시퀀스가 없어서 였는데 시퀀스를 만들었는데 없다고하니 난감했음.
+																			// 잘 살펴보니 book_seq가 아닌 book_id로 썼었음.
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, book_name);	// 재설정된 값 넣기
 			pstmt.setString(2, book_loc);	// 재설정된 값 넣기

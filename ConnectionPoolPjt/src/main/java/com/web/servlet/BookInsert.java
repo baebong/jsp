@@ -29,6 +29,8 @@ public class BookInsert extends HttpServlet {
 		// 받아온 parameter 값으로 BookDTO의 변수 값 재설정
 		bookDTO.setBook_name(book_name);
 		bookDTO.setBook_loc(book_loc);
+		bookDTO.setBook_loc(book_loc);  // 세번째 오류 : book_loc 값이 자꾸 null로 들어감
+										// 다시 보니 setBook_loc이 아닌 setBook_name이었음...;;;;
 		
 		// BookDAO의 insert 메서드 실행!
 		bookDAO.insert(bookDTO);
